@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Privacy Nutrition Label</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>Privacy Facts</h1>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Analyzing privacy policy...</p>
+      </div>
+
+      <!-- Main Content -->
+      <div id="content" class="content" style="display: none">
+        <!-- Site Info -->
+        <div class="site-info">
+          <div class="site-name" id="siteName">example.com</div>
+          <div class="grade-badge" id="gradeBadge">C</div>
+        </div>
+
+        <div class="last-updated">
+          Last analyzed: <span id="lastAnalyzed">Today</span>
+        </div>
+
+        <!-- Risk Indicator -->
+        <div class="risk-indicator" id="riskIndicator">
+          <div class="risk-icon">⚠️</div>
+          <div class="risk-text">
+            <strong id="riskLevel">MEDIUM RISK</strong>
+            <p id="riskDescription">
+              This site collects personal data and shares with partners
+            </p>
+          </div>
+        </div>
+
+        <!-- Data Collected -->
+        <div class="section">
+          <h2>Data Collected</h2>
+          <div class="checkbox-list">
+            <div class="checkbox-item">
+              <span class="checkbox" id="check-personalInfo">✓</span>
+              <span>Personal Info (name, email, phone)</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="check-browsing">✓</span>
+              <span>Browsing History</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="check-location">✓</span>
+              <span>Location Data</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="check-financial">✗</span>
+              <span>Financial Information</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="check-health">✗</span>
+              <span>Health Data</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="check-biometric">✗</span>
+              <span>Biometric Data</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- How Data is Used -->
+        <div class="section">
+          <h2>How Your Data is Used</h2>
+          <div class="usage-list">
+            <div class="usage-item" id="usage-advertising">
+              <span class="bullet">•</span>
+              <span>Targeted Advertising</span>
+            </div>
+            <div class="usage-item" id="usage-personalization">
+              <span class="bullet">•</span>
+              <span>Personalization</span>
+            </div>
+            <div class="usage-item" id="usage-analytics">
+              <span class="bullet">•</span>
+              <span>Analytics</span>
+            </div>
+            <div class="usage-item" id="usage-sharedWithPartners">
+              <span class="bullet">•</span>
+              <span>Shared with Partners</span>
+            </div>
+            <div class="usage-item warning" id="usage-sold">
+              <span class="bullet">⚠</span>
+              <span>Sold to Third Parties</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Your Rights -->
+        <div class="section">
+          <h2>Your Rights</h2>
+          <div class="checkbox-list">
+            <div class="checkbox-item">
+              <span class="checkbox" id="right-accessData">✓</span>
+              <span>Access Your Data</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="right-deleteData">✓</span>
+              <span>Delete Your Data</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="right-optOutTracking">✗</span>
+              <span>Opt-out of Tracking</span>
+            </div>
+            <div class="checkbox-item">
+              <span class="checkbox" id="right-optOutSale">✓</span>
+              <span>Opt-out of Data Sale</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trackers -->
+        <div class="section">
+          <h2>Trackers Detected</h2>
+          <div class="tracker-count">
+            <div class="tracker-badge" id="trackerTotal">0</div>
+            <span>third-party trackers found</span>
+          </div>
+          <div class="tracker-breakdown" id="trackerBreakdown">
+            <div class="tracker-category">
+              <span class="category-label">Advertising:</span>
+              <span id="trackerAdvertising">0</span>
+            </div>
+            <div class="tracker-category">
+              <span class="category-label">Analytics:</span>
+              <span id="trackerAnalytics">0</span>
+            </div>
+            <div class="tracker-category">
+              <span class="category-label">Social:</span>
+              <span id="trackerSocial">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confidence Indicator -->
+        <div class="confidence" id="confidence">
+          <span class="confidence-icon">ℹ️</span>
+          <span
+            >Analysis confidence:
+            <strong id="confidenceLevel">HIGH</strong></span
+          >
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button class="btn-primary" id="viewPolicyBtn">
+            View Full Policy
+          </button>
+          <div id="policyUrlInfo" style="font-size: 11px; color: #6B7280; margin-top: 8px; text-align: center;"></div>
+        </div>
+      </div>
+
+      <!-- Error State -->
+      <div id="error" class="error" style="display: none">
+        <p>Unable to analyze this page</p>
+        <small id="errorMessage"></small>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
