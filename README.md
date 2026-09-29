@@ -2,7 +2,7 @@
 
 A browser extension that presents website privacy policies as standardized "nutrition label" style summaries — making privacy information readable at a glance instead of buried in legal text.
 
-Originally developed as a class project for HCI 6352-01 (Fall 2025).
+Originally developed as a class project for HCI 6352-01 
 
 ---
 
