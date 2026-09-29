@@ -165,7 +165,6 @@ Contributions are welcome! Here are some ways you can help:
 
 This extension:
 - **Does NOT collect any user data**
-- **Does NOT send data to external servers**
 - **Stores all data locally** in your browser using Chrome's storage API
 - **Does NOT track your browsing history** beyond what you've visited (stored locally)
 
